@@ -1,0 +1,21 @@
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+# Символ для нефти Brent на Yahoo Finance
+ticker_symbol = 'BR=F'  # BR=F для фьючерсов на нефть Brent, или можно использовать 'BZ=F' для нефти Brent сроком на месяц
+
+# Загрузка данных с Yahoo Finance
+brent_data = yf.download(ticker_symbol, start='2021-01-01', end='2023-01-01')
+
+# Вывод нескольких строк данных для проверки
+print(brent_data.head())
+
+# График цен
+plt.figure(figsize=(10, 6))
+plt.plot(brent_data['Close'], label='Цена закрытия')
+plt.title('Цены на нефть Brent')
+plt.xlabel('Дата')
+plt.ylabel('Цена ($)')
+plt.legend()
+plt.grid(True)
+plt.show()
