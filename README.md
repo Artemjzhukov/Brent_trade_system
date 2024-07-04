@@ -5,4 +5,6 @@ Updating price extremes during a period
 Exceeding the boundaries of the previous candle, leading range
 
 
-#The ticker symbol for Brent Crude Oil on the ICE (Intercontinental Exchange) is typically represented as "CO1".
+#The ticker symbol for Brent Crude Oil on the ICE (Intercontinental Exchange) is typically represented as "BZ=F".
+
+
