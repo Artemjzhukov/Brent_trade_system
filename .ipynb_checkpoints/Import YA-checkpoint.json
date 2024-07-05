@@ -2,9 +2,26 @@ pip install yfinance
 import yfinance as yf
 import matplotlib.pyplot as plt
 import pandas as pd
+
+# this is ticker Brent on ICE contract without expiration
 ticker = 'BZ=F'
+
+# data with settings
 start_date = '2024-01-01'
 end_date = pd.Timestamp.now().strftime('%Y-%m-%d')
 data_interval = '1d'
 data = yf.download(ticker, start=start_date, end=end_date, interval=data_interval)
+
+
 print(data.tail())
+
+
+# Price plot
+plt.figure(figsize=(10, 6))
+plt.plot(data['Close'], label='Close')
+plt.title('Brent price')
+plt.xlabel('Data')
+plt.ylabel('Price ($)')
+plt.legend()
+plt.grid(True)
+plt.show()
